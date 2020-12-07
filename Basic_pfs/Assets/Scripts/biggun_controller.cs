@@ -4,18 +4,23 @@ using UnityEngine;
 
 public class biggun_controller : MonoBehaviour
 {
-      public GameObject crosshairs;
+    public GameObject crosshairs;
     public int crosshair_type = 1;
-    // Start is called before the first frame update
+
     void Start()
     {
 
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        
+        //SHOOT
+        if (Input.GetButton("Fire1")){
+            GetComponent<Animator>().SetBool("is_shooting", true);
+        }   else{
+            GetComponent<Animator>().SetBool("is_shooting", false);
+        }
     }
 
     void OnEnable(){

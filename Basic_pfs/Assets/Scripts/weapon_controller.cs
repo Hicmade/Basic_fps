@@ -7,6 +7,7 @@ public class weapon_controller : MonoBehaviour
     public GameObject weapons;
     private int weapons_number;
     private int current_weapon;
+    public GameObject player_character;
 
     void Start()
     {
@@ -44,5 +45,5 @@ public class weapon_controller : MonoBehaviour
 
         //current weapon active
         weapons.transform.GetChild(current_weapon).gameObject.SetActive(true);
-    } 
+
 }

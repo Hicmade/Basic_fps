@@ -6,19 +6,25 @@ public class smallgun_controller : MonoBehaviour
 {
     public GameObject crosshairs;
     public int crosshair_type = 0;
-    // Start is called before the first frame update
+
     void Start()
     {
 
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        
+        //SHOOT
+        if (Input.GetButtonDown("Fire1")){
+            GetComponent<Animator>().SetBool("is_shooting", true);
+        }   else{
+            GetComponent<Animator>().SetBool("is_shooting", false);
+        }
     }
 
     void OnEnable(){
         crosshairs.GetComponent<Crosshair_controler>().ChangeCrosshair(crosshair_type);
+
     }
 }
