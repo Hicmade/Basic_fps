@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class grenade_object : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public float throw_force = 200.0f;
     void Start()
+    {
+        GetComponent<Rigidbody>().useGravity = false;
+    }
+
+    void Update()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void ReleaseGranade(){
+        transform.parent = null;
+        GetComponent<Rigidbody>().useGravity = true;
+        GetComponent<Rigidbody>().AddForce(transform.forward*throw_force);
     }
 }

@@ -45,5 +45,5 @@ public class weapon_controller : MonoBehaviour
 
         //current weapon active
         weapons.transform.GetChild(current_weapon).gameObject.SetActive(true);
-
+    }
 }

@@ -4,21 +4,43 @@ using UnityEngine;
 
 public class granade_controller : MonoBehaviour
 {
-     public GameObject crosshairs;
+    public GameObject crosshairs;
     public int crosshair_type = 2;
-    // Start is called before the first frame update
+    public GameObject granade_spawn_point;
+    public int granade_number = 3;
+    public GameObject granade;
+    private GameObject current_granade;
+    
+
     void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
     {
         
     }
 
-    void OnEnable(){
+
+    void Update()
+    {
+        //THROW
+        if (Input.GetButtonDown("Fire1")){
+            GetComponent<Animator>().SetBool("is_shooting", true);
+        }   else{
+            GetComponent<Animator>().SetBool("is_shooting", false);
+        }
+    }
+
+    public void OnEnable(){
         crosshairs.GetComponent<Crosshair_controler>().ChangeCrosshair(crosshair_type);
+        NextGranade();
+    }
+
+    public void ThrowGranade(){
+        current_granade.GetComponent<grenade_object>().ReleaseGranade();
+    }
+
+    private void NextGranade(){
+        if (granade_number > 0){
+            current_granade = Instantiate(granade,granade_spawn_point.transform);
+
+        }
     }
 }
