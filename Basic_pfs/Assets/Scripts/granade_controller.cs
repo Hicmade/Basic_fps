@@ -10,7 +10,8 @@ public class granade_controller : MonoBehaviour
     public int granade_number = 3;
     public GameObject granade;
     private GameObject current_granade;
-    
+
+    public GameObject hud;
 
     void Start()
     {
@@ -31,6 +32,7 @@ public class granade_controller : MonoBehaviour
     public void OnEnable(){
         crosshairs.GetComponent<Crosshair_controler>().ChangeCrosshair(crosshair_type);
         NextGranade();
+        hud.GetComponent<hud_controller>().UpdateAmmoText(granade_number.ToString());
     }
 
     public void ThrowGranade(){

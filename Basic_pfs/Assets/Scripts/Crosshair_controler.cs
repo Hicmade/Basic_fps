@@ -11,7 +11,10 @@ public class Crosshair_controler : MonoBehaviour
         crosshair_amount = transform.childCount;
     }
 
-    public void ChangeCrosshair(int crosshair_no){
+    public GameObject ChangeCrosshair(int crosshair_no){
+
+        GameObject crosshair_current = null;
+
         if (crosshair_no >= crosshair_amount || crosshair_no < 0){
             Debug.Log("There is no such crosshair number");
         } else {
@@ -19,7 +22,10 @@ public class Crosshair_controler : MonoBehaviour
                 transform.GetChild(i).gameObject.SetActive(false);
             }
 
-            transform.GetChild(crosshair_no).gameObject.SetActive(true);
+            crosshair_current = transform.GetChild(crosshair_no).gameObject;
+            crosshair_current.SetActive(true);
         }
+
+        return crosshair_current;
     }
 }
