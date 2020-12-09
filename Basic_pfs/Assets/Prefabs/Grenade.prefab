@@ -123,4 +123,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f0ccfd9604442c68b547af0e3f725d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throw_force: 1000
+  throw_force: 500
+  par_exp: {fileID: 73602384828900649, guid: 7d85d11210bd0978ca5fc945791a0115, type: 3}
+  radius: 10
+  power: 600
+  lift: 30
+  speed: 10

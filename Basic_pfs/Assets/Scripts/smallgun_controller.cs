@@ -12,10 +12,11 @@ public class smallgun_controller : MonoBehaviour
     public float shoot_strength = 700.0f;
     private string ammo_amount = "all";
     public GameObject hud;
+    private ParticleSystem shoot_par;
 
     void Start()
     {
-
+        shoot_par = gameObject.transform.Find("par_shoot").gameObject.GetComponent<ParticleSystem>();
     }
 
 
@@ -49,5 +50,7 @@ public class smallgun_controller : MonoBehaviour
                 }
             }
         }
+
+        shoot_par.Play();
     }
 }

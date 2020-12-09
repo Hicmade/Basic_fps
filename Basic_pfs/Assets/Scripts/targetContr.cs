@@ -12,6 +12,10 @@ public class targetContr : MonoBehaviour
         StartCoroutine("Destroy_target");
     }
 
+    public void Hit_target(){
+        StartCoroutine("Destroy_target");
+    }
+
     IEnumerator Destroy_target(){
         yield return new WaitForSeconds(3);
         Destroy(gameObject);

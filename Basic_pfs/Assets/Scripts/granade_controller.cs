@@ -22,7 +22,7 @@ public class granade_controller : MonoBehaviour
     void Update()
     {
         //THROW
-        if (Input.GetButtonDown("Fire1")){
+        if (Input.GetButtonDown("Fire1") && granade_number > 0){
             GetComponent<Animator>().SetBool("is_shooting", true);
         }   else{
             GetComponent<Animator>().SetBool("is_shooting", false);
@@ -37,6 +37,8 @@ public class granade_controller : MonoBehaviour
 
     public void ThrowGranade(){
         current_granade.GetComponent<grenade_object>().ReleaseGranade();
+        granade_number--;
+        hud.GetComponent<hud_controller>().UpdateAmmoText(granade_number.ToString());
     }
 
     private void NextGranade(){
