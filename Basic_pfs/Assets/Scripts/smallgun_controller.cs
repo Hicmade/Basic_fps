@@ -13,21 +13,32 @@ public class smallgun_controller : MonoBehaviour
     private string ammo_amount = "all";
     public GameObject hud;
     private ParticleSystem shoot_par;
+    public bool can_shoot = true;
+    private float initial_cam_view;
 
     void Start()
     {
         shoot_par = gameObject.transform.Find("par_shoot").gameObject.GetComponent<ParticleSystem>();
+        
+        initial_cam_view = Camera.main.fieldOfView;
     }
 
 
     void Update()
     {
         //SHOOT
-        if (Input.GetButtonDown("Fire1")){
+        if (Input.GetButtonDown("Fire1") && can_shoot){
             GetComponent<Animator>().SetBool("is_shooting", true);
             Shoot();
         }   else{
+            can_shoot = true;
             GetComponent<Animator>().SetBool("is_shooting", false);
+        }
+
+        if (Input.GetButton("Fire2")){
+            Camera.main.fieldOfView = 10;
+        }else{
+            Camera.main.fieldOfView = initial_cam_view;
         }
 
         
@@ -51,6 +62,15 @@ public class smallgun_controller : MonoBehaviour
             }
         }
 
+
+    }
+
+    public void ParticleShoot(){
         shoot_par.Play();
+    }
+
+    public void EnableShoot(){
+        Debug.Log("enable shoot");
+        can_shoot = true;
     }
 }

@@ -57,10 +57,6 @@ public class grenade_object : MonoBehaviour
                             target.Hit_target(Vector3.zero, 0);
                         }
                     }
-                    
-            
-
-            
                 }
             }
             is_explosion = false;

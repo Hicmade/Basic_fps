@@ -1730,8 +1730,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e501a7256dfe9c879f73fbcda8c585f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  win_screen: {fileID: 0}
-  target_container: {fileID: 0}
+  win_screen: {fileID: 181520266}
+  target_container: {fileID: 1200144908}
 --- !u!4 &1063291631
 Transform:
   m_ObjectHideFlags: 0
@@ -1770,6 +1770,7 @@ MonoBehaviour:
   shoot_range: 200
   shoot_strength: 700
   hud: {fileID: 1219872580}
+  can_shoot: 1
 --- !u!95 &1096924670
 Animator:
   serializedVersion: 3
