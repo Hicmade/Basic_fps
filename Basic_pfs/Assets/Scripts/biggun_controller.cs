@@ -51,7 +51,7 @@ public class biggun_controller : MonoBehaviour
         }
 
         shoot_par.Play();
-        //GameObject hit_par = Instantiate(imp_par, hit.point, Quaternion.LookRotation(hit.normal));
-        //Destroy(hit_par, 1.0f);
+        GetComponent<AudioSource>().Play();
+
     }
 }

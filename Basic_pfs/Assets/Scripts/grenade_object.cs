@@ -36,6 +36,7 @@ public class grenade_object : MonoBehaviour
     void OnCollisionEnter(){
         is_explosion = true;
         Debug.Log("explosion bool" + is_explosion);
+        GetComponent<AudioSource>().Play();
 
     }
 

@@ -50,6 +50,7 @@ public class smallgun_controller : MonoBehaviour
     }
 
     private void Shoot(){
+        
 
         RaycastHit hit;
         if (Physics.Raycast(mainCam.transform.position, mainCam.transform.forward ,out hit, shoot_range)){
@@ -67,6 +68,7 @@ public class smallgun_controller : MonoBehaviour
 
     public void ParticleShoot(){
         shoot_par.Play();
+        GetComponent<AudioSource>().Play();
     }
 
     public void EnableShoot(){
