@@ -7,10 +7,6 @@ public class special : MonoBehaviour
     public GameObject terr;
     public GameObject spec_l;
     public Material mat;
-    void Start()
-    {
-        
-    }
 
     void OnEnable(){
         terr.GetComponent<MeshRenderer>().material = mat;

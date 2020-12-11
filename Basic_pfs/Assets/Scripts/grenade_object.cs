@@ -20,12 +20,6 @@ public class grenade_object : MonoBehaviour
         GetComponent<Rigidbody>().isKinematic = true;
     }
 
-    void Update()
-    {
-    
-        
-    }
-
     public void ReleaseGranade(){
         transform.parent = null;
         GetComponent<Rigidbody>().useGravity = true;
@@ -35,14 +29,11 @@ public class grenade_object : MonoBehaviour
 
     void OnCollisionEnter(){
         is_explosion = true;
-        Debug.Log("explosion bool" + is_explosion);
         GetComponent<AudioSource>().Play();
-
     }
 
     void FixedUpdate(){
         if(is_explosion){
-            Debug.Log("Is explosion");
             Vector3 explosion_position = transform.position;
             Collider [] colliders = Physics.OverlapSphere(explosion_position, radius);
 
@@ -61,13 +52,11 @@ public class grenade_object : MonoBehaviour
                 }
             }
             is_explosion = false;
-            Debug.Log("is_explosion false");
             EndExplosion();
         }
     }
 
     void EndExplosion(){
-        Debug.Log("end explosion");
         GameObject exp_handler = Instantiate(par_exp, transform.position, Quaternion.identity);
         Destroy(gameObject);
         Destroy(exp_handler, 1.0f);

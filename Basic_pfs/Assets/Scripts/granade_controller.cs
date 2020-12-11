@@ -13,14 +13,8 @@ public class granade_controller : MonoBehaviour
 
     public GameObject hud;
 
-    void Start()
-    {
-        
-    }
 
-
-    void Update()
-    {
+    void Update(){
         //THROW
         if (Input.GetButtonDown("Fire1") && granade_number > 0){
             GetComponent<Animator>().SetBool("is_shooting", true);

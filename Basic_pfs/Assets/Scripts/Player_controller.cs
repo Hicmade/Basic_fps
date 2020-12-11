@@ -13,10 +13,6 @@ public class Player_controller : MonoBehaviour
     public float rot_cam_ver_up_max = -8.0f;
     public float rot_cam_ver_down_max = 7.0f;
 
-    void Start()
-    {
-
-    }
 
     void Update(){
         //WALK
@@ -36,9 +32,5 @@ public class Player_controller : MonoBehaviour
         }
         rotation_camera_vertical = look_rotation.y * look_speed;
         Camera.main.transform.localEulerAngles = new Vector3(rotation_camera_vertical,0,0);
-
     }
-
-
-
 }

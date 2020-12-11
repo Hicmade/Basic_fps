@@ -9,11 +9,13 @@ public class targetContr : MonoBehaviour
     public Material mat1;
     public Material mat2;
 
+    //for grenade use
     public void Hit_target(Vector3 force_dir, float force_strength){
         GetComponent<Rigidbody>().AddForce(force_dir*force_strength);
         StartCoroutine("Destroy_target");
     }
 
+    //for hadgun weapons use
     public void Hit_target(){
         StartCoroutine("Destroy_target");
     }

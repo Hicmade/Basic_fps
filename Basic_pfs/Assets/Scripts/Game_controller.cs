@@ -9,14 +9,11 @@ public class Game_controller : MonoBehaviour
     public GameObject win_screen;
     public GameObject target_container;
 
-    void Start()
-    {
+    void Start(){
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-
-    void Update()
-    {
+    void Update(){
         if (target_container.transform.childCount < 1){
             win_screen.SetActive(true);
             StartCoroutine("WinGame");

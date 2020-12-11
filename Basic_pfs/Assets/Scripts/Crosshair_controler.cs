@@ -6,8 +6,7 @@ public class Crosshair_controler : MonoBehaviour
 {
     private int crosshair_amount;
 
-    void Start()
-    {
+    void Start(){
         crosshair_amount = transform.childCount;
     }
 
@@ -18,10 +17,12 @@ public class Crosshair_controler : MonoBehaviour
         if (crosshair_no >= crosshair_amount || crosshair_no < 0){
             Debug.Log("There is no such crosshair number");
         } else {
+            //deactivate all crosshairs
             for (int i =0; i < crosshair_amount; i++){
                 transform.GetChild(i).gameObject.SetActive(false);
             }
 
+            //activate one crosshair
             crosshair_current = transform.GetChild(crosshair_no).gameObject;
             crosshair_current.SetActive(true);
         }

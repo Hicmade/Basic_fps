@@ -9,9 +9,9 @@ public class weapon_controller : MonoBehaviour
     private int current_weapon;
     public GameObject player_character;
 
-    void Start()
-    {
-        //check existance of weapons on the scene
+
+    void Start(){
+        //check the existance of weapons on the scene
         weapons_number = transform.childCount;
 
         if (weapons_number != 0){
@@ -21,11 +21,9 @@ public class weapon_controller : MonoBehaviour
         else{
             Debug.Log("No weapons objects on the scene.");
         }
-        
     }
 
-    void Update()
-    {
+    void Update(){
         if (Input.GetButtonDown("ChangeWeapon")){
             NextWeapon();
         }

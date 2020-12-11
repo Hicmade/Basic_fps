@@ -12,17 +12,10 @@ public class biggun_controller : MonoBehaviour
     public float shoot_strength = 300.0f;
     private string ammo_amount = "all";
     public GameObject hud;
-    private ParticleSystem shoot_par;
-    //public GameObject imp_par;
-
-    void Start()
-    {
-        shoot_par = gameObject.transform.Find("par_shoot").gameObject.GetComponent<ParticleSystem>();
-    }
+    public ParticleSystem shoot_par;
 
 
-    void Update()
-    {
+    void Update(){
         //SHOOT
         if (Input.GetButton("Fire1")){
             GetComponent<Animator>().SetBool("is_shooting", true);
@@ -38,7 +31,6 @@ public class biggun_controller : MonoBehaviour
     }
 
     private void Shoot(){
-
         RaycastHit hit;
         if (Physics.Raycast(mainCam.transform.position, mainCam.transform.forward ,out hit, shoot_range)){
             Debug.Log(hit.transform.name);
@@ -52,6 +44,5 @@ public class biggun_controller : MonoBehaviour
 
         shoot_par.Play();
         GetComponent<AudioSource>().Play();
-
     }
 }
