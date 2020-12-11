@@ -18,6 +18,10 @@ public class Game_controller : MonoBehaviour
             win_screen.SetActive(true);
             StartCoroutine("WinGame");
         }
+
+        if (Input.GetKey(KeyCode.Escape)){
+            Application.Quit();
+        }
     }
 
     IEnumerator WinGame(){
